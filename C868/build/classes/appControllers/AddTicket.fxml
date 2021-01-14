@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="827.0" prefWidth="747.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appControllers.AddTicketController">
+    <children>
+        <Label layoutX="222.0" layoutY="14.0" text="Create A New Ticket">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <GridPane layoutX="49.0" layoutY="52.0" prefHeight="694.0" prefWidth="671.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="102.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="404.0" minWidth="10.0" prefWidth="400.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="157.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="161.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="155.0" minHeight="6.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="155.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="231.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="271.0" minHeight="80.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="245.0" minHeight="80.0" prefHeight="158.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Date of Incident" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label text="Customer" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label text="Technician" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label text="Urgency" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="cbo_customer" prefHeight="25.0" prefWidth="228.0" promptText="Choose a Customer" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <ComboBox fx:id="cbo_owner" prefHeight="25.0" prefWidth="227.0" promptText="Choose a Technician" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <ComboBox fx:id="cbo_priority" prefHeight="25.0" prefWidth="228.0" promptText="Choose an Urgency" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Subject:" GridPane.rowIndex="6">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label text="Description:" GridPane.rowIndex="7">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txt_title" prefHeight="25.0" prefWidth="379.0" promptText="Enter Subject Here..." GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <TextArea fx:id="txt_desc" prefHeight="278.0" prefWidth="425.0" promptText="Enter Ticket Details Here..." GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <Label text="Status" GridPane.rowIndex="5">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="cbo_status" prefHeight="25.0" prefWidth="228.0" promptText="Current Ticket Status" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="User Notes" GridPane.rowIndex="8">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="txt_notes" prefHeight="171.0" prefWidth="404.0" promptText="Enter Notes here" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <DatePicker fx:id="dp_date" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </children>
+        </GridPane>
+        <Button fx:id="btn_save" layoutX="288.0" layoutY="777.0" mnemonicParsing="false" onAction="#HandlerAddTicketBtn" prefHeight="25.0" prefWidth="73.0" text="Save" />
+        <Button fx:id="btn_return" layoutX="627.0" layoutY="777.0" mnemonicParsing="false" onAction="#HandlerReturnBtn" prefHeight="25.0" prefWidth="73.0" text="Cancel" />
+    </children>
+</AnchorPane>
